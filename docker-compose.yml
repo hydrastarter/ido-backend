@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: library/postgres:14-alpine
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=database
+    ports:
+      - '5432:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - auroblocks
+    restart: unless-stopped
+  reef-crowdsale-backend:
+    container_name: reef-crowdsale-backend
+    build:
+      context: .
+    volumes:
+      - ./src:/usr/src/app/src
+      - /usr/src/app/node_modules
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
+    command: yarn run start:dev
+    env_file:
+      - .env
+    networks:
+      - auroblocks
+    depends_on:
+      - postgres
+    restart: unless-stopped
+networks:
+  auroblocks:
+volumes:
+  db-data:
