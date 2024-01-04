@@ -57,6 +57,10 @@ export class CreateCrowdsaleDto {
 
   @IsNotEmpty()
   @IsString()
+  presaleImageUrl: string;
+
+  @IsNotEmpty()
+  @IsString()
   @IsUrl()
   twitterUrl: string;
 

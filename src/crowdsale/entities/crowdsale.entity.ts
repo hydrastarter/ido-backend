@@ -1,9 +1,9 @@
 import {
+  BaseEntity,
+  Column,
+  CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
-  Column,
-  BaseEntity,
-  CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
@@ -29,6 +29,9 @@ export class Crowdsale extends BaseEntity {
 
   @Column()
   tokenImageUrl: string;
+
+  @Column()
+  presaleImageUrl: string;
 
   @Column()
   twitterUrl: string;
