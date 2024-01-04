@@ -4,6 +4,7 @@ import { CrowdsaleModule } from './crowdsale/crowdsale.module';
 import configuration, { Config } from './config/configuration';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
+import {HcModule} from "./hc/hc.module";
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { AuthModule } from './auth/auth.module';
       cache: true,
     }),
     CrowdsaleModule,
+    HcModule,
     AuthModule,
   ],
 })
