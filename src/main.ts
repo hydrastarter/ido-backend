@@ -10,5 +10,6 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalInterceptors(new GlobalHttpResponseInterceptor());
   await app.listen(Config().port);
+  console.log('ido backend listening port=',Config().port);
 }
 bootstrap();

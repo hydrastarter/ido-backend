@@ -16,3 +16,5 @@ COPY tsconfig.json /usr/src/app/tsconfig.json
 RUN yarn run build
 
 EXPOSE 3000
+
+CMD [ "yarn", "start" ]
