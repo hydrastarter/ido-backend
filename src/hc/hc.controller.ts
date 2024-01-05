@@ -10,6 +10,7 @@ export class HcController {
     return {
       data: {
         network: process.env.NETWORK,
+        name: process.env.npm_package_name,
         ver: process.env.npm_package_version,
       },
     };

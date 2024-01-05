@@ -1,6 +1,6 @@
 {
-  "name": "reef-crowdsale-backend",
-  "version": "0.0.1",
+  "name": "ido-backend",
+  "version": "0.0.2",
   "description": "Backend APIs and database for storing the created IDO's",
   "author": "Saurabh Lodha <saurabhlodha221b@gmail.com",
   "private": true,
