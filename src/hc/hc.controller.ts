@@ -1,16 +1,17 @@
-import {Controller, Get, UseGuards,} from '@nestjs/common';
-import {AuthGuard} from '@nestjs/passport';
+import {Controller, Get} from '@nestjs/common';
+import {ApiResponseHandler} from '../utils/api';
 
 @Controller('hc')
-@UseGuards(AuthGuard('basic'))
 export class HcController {
-
-  constructor() {
-  }
+  private apiResponseHandler: ApiResponseHandler;
 
   @Get('/')
   public async getHc() {
-    return {ok:true};
+    return {
+      data: {
+        network: process.env.NETWORK,
+        ver: process.env.npm_package_version,
+      },
+    };
   }
-
 }
