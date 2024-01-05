@@ -15,6 +15,6 @@ COPY tsconfig.json /usr/src/app/tsconfig.json
 
 RUN yarn run build
 
-EXPOSE 3000
+EXPOSE 80
 
 CMD [ "yarn", "start" ]

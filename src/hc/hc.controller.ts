@@ -1,5 +1,5 @@
-import {Controller, Get} from '@nestjs/common';
-import {ApiResponseHandler} from '../utils/api';
+import { Controller, Get } from '@nestjs/common';
+import { ApiResponseHandler } from '../utils/api';
 
 @Controller('hc')
 export class HcController {
